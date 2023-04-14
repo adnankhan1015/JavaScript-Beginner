@@ -74,26 +74,3 @@ console.log(firstName, lastName)
   * 2. Array
   * 3. Function
 */
-
-/* 
-  ? What is an object?
-  * An object is JavaScript, and other programming languages is like an object in real world. like think of a person.
-  * A person has, name, age, address, and so so on.
-  * These are the properties of a person 
-  * We have the same concept in JavaScript
-  * When we are dealing with multiple related variables we can put these variables inside of an object.
-*/
-
-let personName = 'John'
-let personAge = 22
-let personAddress = 'G 11'
-
-
-let person = {
-  // * Inside of this we have key value pairs. The keys are what we called the properties of this object.
-  name: 'Mike',
-  age: 22,
-  address: 'G11'
-};  
-
-console.log(person)
