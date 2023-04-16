@@ -28,3 +28,12 @@ console.log(x !== 1);
 console.log('Srtict','1' === 1)
 console.log('Loose','1' == 1)
 
+/* 
+  ! Ternary Operator or Conditional Operator in JavaScript
+  * 
+*/
+
+let points = 110;
+
+let type = points > 100 ? 'Gold' : 'Silver';
+console.log(type);
