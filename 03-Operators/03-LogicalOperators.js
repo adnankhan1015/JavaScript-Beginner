@@ -40,3 +40,6 @@ console.log('Refused',applicationRefused)
 
 let a = 'red'
 let b = 'blue'
+
+let userColor = 'red'
+let defultColor = 'blue'
