@@ -9,71 +9,90 @@
 */
 // alert();
 
-
 function fizzbuzz(number) {
   const inputNumb = number;
-  let outputNumber = '';
+  let outputNumber = "";
 
-  if( inputNumb%5 == 0 && inputNumb%3 == 0)  {
-    outputNumber = 'fizzbuzz';
-  }
-
-  else if(inputNumb%5 == 0) {
-    outputNumber = 'Buzz';
-  }
-
-  else if(inputNumb%3 == 0) {
-    outputNumber = 'Fizz';
-  }
-
-  else if(inputNumb%5 != 0 && inputNumb%3 != 0) {
-    outputNumber = inputNumb+ ' Not Divisible by 3 and 5';
-  }
-
-  else{
+  if (inputNumb % 5 == 0 && inputNumb % 3 == 0) {
+    outputNumber = "fizzbuzz";
+  } else if (inputNumb % 5 == 0) {
+    outputNumber = "Buzz";
+  } else if (inputNumb % 3 == 0) {
+    outputNumber = "Fizz";
+  } else if (inputNumb % 5 != 0 && inputNumb % 3 != 0) {
+    outputNumber = inputNumb + " Not Divisible by 3 and 5";
+  } else {
     outputNumber = "Nothing";
   }
 
-   return outputNumber;
+  return outputNumber;
 }
-console.log('FizzBuzz Algorithm ');
-console.log(fizzbuzz(9));
+// console.log("FizzBuzz Algorithm ");
+// console.log(fizzbuzz(11));
 
+function fizzBuzz(input) {
+  if (typeof input !== "number") return "Not a number";
+  if (input % 3 === 0) return "Fizz";
+  if (input % 5 === 0) return "Buzz";
+  if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
+  return input;
+}
 
+// console.log(fizzBuzz(11));
 
 /* 
   ! 2. maximum number
   * Write a function that takes two numbers and returns a the maximum of the two?
 */
 
-function maximumNum(firstNumber, secondNumber){
-    let num1 = firstNumber;
-    let num2 = secondNumber;
+function maximumNum(firstNumber, secondNumber) {
+  let num1 = firstNumber;
+  let num2 = secondNumber;
 
-    if( num1 >= num2){
-      console.log( 'This number is greater',num1);
-    }else{
-      console.log('This number is greater',num2);
-    } 
+  if (num1 >= num2) {
+    console.log("This number is greater", num1);
+  } else {
+    console.log("This number is greater", num2);
+  }
 }
-console.log('maximum number Algorithm');
-maximumNum(5 , 8);
+// console.log("maximum number Algorithm");
+// maximumNum(5, 8);
+
+function maximumValue(a, b) {
+  // if (a > b) return a;
+  // return b;
+  return a > b ? a : b;
+  // return z;
+}
+
+// console.log("maximum value", maximumValue(5, 8));
+
 /* 
   ! 3. Show Number
   * Write a function that takes a limit(as s number). 
   * The functions shows, the even and odd numbers from 0 to the limit(that user pass into the function)
 */
 
-function limit(limitnum){
-  for(let i = limitnum; i >= 0; i--){
-    if(i > limitnum) {
+function limit(limitnum) {
+  for (let i = limitnum; i >= 0; i--) {
+    if (i > limitnum) {
       console.log(i);
     }
   }
 }
-console.log('Show Number Algorithm');
+// console.log("Show Number Algorithm");
 limit(10);
 
+function showNumbers(limit) {
+  for (let i = 0; i <= limit; i++) {
+    const msg = i % 2 === 0 ? "Even" : "ODD";
+    console.log(msg, i);
+    // if (i % 2 === 0) console.log("even", i);
+    // else console.log("odd", i);
+  }
+}
+
+// showNumbers(10);
 
 /* 
   ! 4. Count Trhty
@@ -82,19 +101,17 @@ limit(10);
 
 let truthy = [0, 1, "", "hello", [], [1, 2, 3]];
 let count = 0;
-function countTruthy(truevalues){
-  for(let element in truevalues){
-    if(element){
+function countTruthy(truevalues) {
+  for (let element in truevalues) {
+    if (element) {
       count++;
     }
   }
   return count;
 }
-console.log('Count Trhty Algorithm');
-const counts =countTruthy(truevalues);
-console.log(counts);
-
-
+// console.log("Count Trhty Algorithm");
+// const counts = countTruthy(truevalues);
+// console.log(counts);
 
 /*
   ! 5. String Properties
@@ -103,23 +120,24 @@ console.log(counts);
 */
 
 const car = {
-  name: 'Mehran',
+  name: "Mehran",
   model: 2023,
-  color: 'Black',
-  price: 3000000
+  color: "Black",
+  price: 3000000,
 };
 
-function showProperties(properties){
-  for(let key in properties){
-    if(typeof properties[key] === 'string' ){
-      console.log(properties[key]);
+function showProperties(properties) {
+  for (let key in properties) {
+    if (typeof properties[key] === "string") {
+      console.log(key, properties[key]);
     }
   }
 }
-console.log('String Properties Algorithm');
-showProperties(car);
+// console.log("String Properties Algorithm");
+// showProperties(car);
 
-
-
-
-
+/* 
+  ! showStars(7)
+  * Create a function named "showStars"
+  * it takes rows as an input and it will return a star pattern in right triangle.
+*/
