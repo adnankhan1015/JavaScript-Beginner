@@ -84,7 +84,10 @@ function Circle(radius) {
 }
 
 const constructorCircle = new Circle(3);
-console.log(constructorCircle);
+// console.log(constructorCircle);
+
+// console.log(constructorCircle.constructor);
+// console.log(Circle.constructor);
 
 /* 
     ! This new keyword in the constructor function do 3 things
@@ -94,3 +97,72 @@ console.log(constructorCircle);
         * So here we don't have an explicit return statement.
         * "return", This will happen automatically when we use the new operator
 */
+
+/* 
+  ! Dynamic Nature of Object
+  * Every JavaScript object has a property called constructor, and that constructor references the function that was used to construct or create that object.
+*/
+
+// on console write anotherCircle.constructor
+// We can tell that this is a function, because here er have the blue f
+
+let a = new Object();
+let obj = {};
+let b = new String();
+let c = new Boolean();
+let d = new Number();
+let array = [];
+let str = "";
+
+// ! Refine the Definition
+// * Every Object has a constructor property,
+// * and that references a function
+// * that was used to create that object
+
+/* 
+  ! Constructor Property
+  * Every object in JavaScript has a property called constructor and that constructor  references the function that was used to construct or create that object.
+*/
+
+/* 
+  ! Functions and Objects
+*/
+
+function CreateCircleObject(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("Draw circle");
+  };
+}
+
+// const createCircleObj = new Function('radius',  this.radius = radius, this.draw = function () {});
+
+// Circle.call(window, 1);
+// const circle2 = Circle(1);
+
+/* 
+  ! Value vs Reference
+  * Value types are also called primitive types
+  * We learned that functions are also objects and the same is true for arrays
+  * 
+  ! So in a netshell in JavaScript we have Primitive types and Object types
+
+  ? How primitive types and objects have behave differently?
+
+*/
+
+let xx = 10;
+let yy = xx;
+xx = 20;
+
+console.log("x", xx);
+console.log("y", yy);
+
+// ! If we use a reference type or an object type
+
+let aa = { value: 10 };
+let bb = aa;
+aa.value = 20;
+
+console.log("aa", aa);
+console.log("bb", bb);
