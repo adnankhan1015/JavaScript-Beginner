@@ -155,8 +155,8 @@ let xx = 10;
 let yy = xx;
 xx = 20;
 
-console.log("x", xx);
-console.log("y", yy);
+// console.log("x", xx);
+// console.log("y", yy);
 
 // ! If we use a reference type or an object type
 
@@ -164,5 +164,90 @@ let aa = { value: 10 };
 let bb = aa;
 aa.value = 20;
 
-console.log("aa", aa);
-console.log("bb", bb);
+// console.log("aa", aa);
+// console.log("bb", bb);
+
+// * Primitive types are copied by their value.
+// * Object types are copied by their REFERNCE(Address).
+
+// ! Enumerating property of an OBJECT
+
+const circleObject = {
+  radius: 10,
+  draw() {
+    console.log("Draw");
+  },
+};
+
+/*
+ * We have this circle object radius properties and draw method
+ * We learned,
+ * for...in loop => With this we can iterate over all the properties and methods of an object
+ * for...of loop
+ * iterate over the properties in an object.
+ */
+
+// * With this we can iterate over all the properties and methods of an object
+// * THEN, if you want to get the value of a property we use  the bracket Notation
+
+for (let key in circleObject) {
+  // console.log(key, circleObject[key]);
+}
+
+/*
+ * for...of loop
+ * An object is not iterable so we cannot iterate it using for...of loop. However, we have this method Object.keys()
+ * Object.keys() => This method returns a string array which contains all the properties and methods in the object.
+ ! We have another similar method Object.entries() => So instead of  returning keys as a string array. It returns each value pair as an array
+ */
+for (let key of Object.keys(circleObject)) {
+  // console.log(key);
+}
+
+for (let key of Object.entries(circleObject)) {
+  // console.log(key);
+}
+
+if ("radius" in circleObject) {
+  // console.log("YES");
+}
+
+/*
+ * The simplest way to enumerate the properties and methods in an object is using the for...in loop
+ */
+
+// function Object() {}
+
+// let aaa = {};
+// const aaa = new Object();
+
+/*
+  ! Clonning an OBJECT
+  * 
+*/
+
+const cloneObject = {
+  radius: 10,
+  draw() {
+    console.log("Draw");
+  },
+};
+
+// ! BAD Approach
+const another = {};
+for (let key in cloneObject) {
+  another[key] = cloneObject[key];
+}
+
+console.log(another);
+
+// * Second WAY Object.assign()
+const objectAssignWay = Object.assign({ color: "yellow" }, cloneObject);
+console.log(objectAssignWay);
+
+// * Third Way of clonning an OBJECT
+
+const cloneObjectSpreadWay = { ...cloneObject };
+console.log(cloneObjectSpreadWay);
+
+// ! Garbage Collection
