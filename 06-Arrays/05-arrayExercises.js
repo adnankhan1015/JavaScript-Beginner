@@ -27,3 +27,16 @@
     * 2. Use splice method to get the element
     * 3. use splice method to add it an array
 */
+
+
+function move(array, index, offset) {
+    const output = [...array];
+    const element = output.splice(index, 1)[0];
+
+    output.splice(index + offset, 0, element);
+
+    return output
+}
+
+const numbers = [1, 2, 3, 4]
+console.log(move(numbers, 0, 1))
