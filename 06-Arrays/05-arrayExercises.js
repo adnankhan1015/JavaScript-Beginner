@@ -32,7 +32,7 @@
 function move(array, index, offset) {
     const output = [...array];
     const element = output.splice(index, 1)[0];
-
+    console.log('element >>>>', element)
     output.splice(index + offset, 0, element);
 
     return output
